@@ -8,14 +8,14 @@ import (
 
 type UserRepository struct {
 	users []entities.User
-	mu    sync.Mutex // Para evitar condiciones de carrera
-	nextID int       // Para generar IDs únicos
+	mu    sync.Mutex 
+	nextID int      
 }
 
 func NewUserRepository() *UserRepository {
 	return &UserRepository{
 		users:  []entities.User{},
-		nextID: 1, // Iniciar el ID en 1
+		nextID: 1, 
 	}
 }
 
